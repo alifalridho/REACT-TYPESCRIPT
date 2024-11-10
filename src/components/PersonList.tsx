@@ -1,10 +1,12 @@
+import "./PersonList.css";
+
 type PersonListProps = {
     names: { first: string; last: string }[];
 };
 
 const PersonList = ({ names }: PersonListProps) => {
     return (
-        <div>
+        <div className="personlist-container">
             {names.map((name) => (
                 <h2>
                     {name.first} {name.last}
