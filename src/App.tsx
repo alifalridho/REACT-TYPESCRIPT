@@ -5,6 +5,9 @@ import Hello from "./components/Hello";
 import User from "./components/User";
 import Person from "./components/Person";
 import PersonList from "./components/PersonList";
+import Status from "./components/Status";
+import Parent from "./components/Parent";
+import Child from "./components/Child";
 
 function App() {
     const personName = {
@@ -23,6 +26,10 @@ function App() {
             <User name="Efraim" age={24} status={"taken"} isLoggedin={true} />
             <Person name={personName} />
             <PersonList names={personList} />
+            <Status status="success" />
+            <Parent>
+                <Child />
+            </Parent>
         </div>
     );
 }
