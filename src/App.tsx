@@ -8,6 +8,9 @@ import PersonList from "./components/PersonList";
 import Status from "./components/Status";
 import Parent from "./components/Parent";
 import Child from "./components/Child";
+import Button from "./components/Button";
+import Input from "./components/Input";
+import { useState } from "react";
 
 function App() {
     const personName = {
@@ -19,6 +22,7 @@ function App() {
         { first: "Clark", last: "Kane" },
         { first: "Joker", last: "Junior" },
     ];
+    const [input, setInput] = useState("");
     return (
         <div className="App">
             <Greet name={"Alif"} />
@@ -30,6 +34,17 @@ function App() {
             <Parent>
                 <Child />
             </Parent>
+            <Button
+                handdleClick={(event) => {
+                    console.log("Event:", event);
+                }}
+            />
+            <Input
+                handleChange={(event) => {
+                    setInput(event.target.value);
+                }}
+                text={input}
+            />
         </div>
     );
 }
